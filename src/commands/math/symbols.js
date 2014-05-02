@@ -82,7 +82,7 @@ var Letter = P(Variable, function(_, _super) {
     // removeClass and delete flags from all letters before figuring out
     // which are part of an auto-unitalicized command, if any
     Fragment(l[R] || this.parent.ends[L], r[L] || this.parent.ends[R]).each(function(el) {
-      el.jQ.removeClass('un-italicized first last');
+      el.jQ.removeClass('un-italicized mq-first last');
       delete el.isFirstLetter;
       delete el.isLastLetter;
     });
@@ -91,7 +91,7 @@ var Letter = P(Variable, function(_, _super) {
     outer: for (var i = 0, first = l[R] || this.parent.ends[L]; i < str.length; i += 1, first = first[R]) {
       for (var len = min(MAX_UNITALICIZED_LEN, str.length - i); len > 0; len -= 1) {
         if (UnItalicizedCmds.hasOwnProperty(str.slice(i, i + len))) {
-          if (nonOperatorSymbol(first[L])) first.jQ.addClass('first');
+          if (nonOperatorSymbol(first[L])) first.jQ.addClass('mq-first');
           first.isFirstLetter = true;
           for (var j = 0, letter = first; j < len; j += 1, letter = letter[R]) {
             letter.jQ.addClass('un-italicized');
