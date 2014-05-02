@@ -338,7 +338,7 @@ LatexCmds['¾'] = bind(LatexFragment, '\\frac34');
 var BinaryOperator = P(Symbol, function(_, _super) {
   _.init = function(ctrlSeq, html, text) {
     _super.init.call(this,
-      ctrlSeq, '<span class="binary-operator">'+html+'</span>', text
+      ctrlSeq, '<span class="mq-binary-operator">'+html+'</span>', text
     );
   };
 });
@@ -349,7 +349,7 @@ var PlusMinus = P(BinaryOperator, function(_) {
   _.contactWeld = _.siblingCreated = _.siblingDeleted = function(dir) {
     if (dir === R) return; // ignore if sibling only changed on the right
     this.jQ[0].className =
-      (!this[L] || this[L] instanceof BinaryOperator ? '' : 'binary-operator');
+      (!this[L] || this[L] instanceof BinaryOperator ? '' : 'mq-binary-operator');
     return this;
   };
 });
