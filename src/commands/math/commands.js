@@ -431,7 +431,7 @@ var Vec = LatexCmds.vec = P(MathCommand, function(_, _super) {
 var NthRoot =
 LatexCmds.nthroot = P(SquareRoot, function(_, _super) {
   _.htmlTemplate =
-      '<sup class="nthroot mq-non-leaf">&0</sup>'
+      '<sup class="mq-nthroot mq-non-leaf">&0</sup>'
     + '<span class="scaled">'
     +   '<span class="sqrt-prefix scaled">&radic;</span>'
     +   '<span class="sqrt-stem mq-non-leaf">&1</span>'
